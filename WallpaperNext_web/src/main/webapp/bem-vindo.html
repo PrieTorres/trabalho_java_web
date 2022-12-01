@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="padding: 0; margin: 0; width: 100vw; height: 100vh">
+	<div class="side-menu" style="width: 0px; display: none; opacity: 0;">
+		<div class="head-side-menu">
+			<div class="botao-icon botao-main" onclick="closeMenu()">
+				<img class="icon" src="img/white-menu-icon.png" alt="menu icon">
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a>Mais aplicativos</a></li>
+				<li><a>Avaliar aplicativo</a></li>
+				<li><a>Remover Propaganda</a></li>
+				<li><a>Sobre nós</a></li>
+			</ul>
+		</nav>
+	</div>
+	<header>
+		<div class="head-content">
+			<div class="botao-icon botao-main" onclick="openMenu()">
+				<img class="icon" src="img/menu.png" alt="menu icon">
+			</div>
+			<h1 class="title" style="font-size: 3rem;">WallpaperNext</h1>
+			<div class="botao-icon botao-out">
+				<img class="icon" src="img/logout_icon.png" alt="logout icon">
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="menu-options">
+			<div class="option">
+				<div class="icon-cntainer">
+					<img class="menu-icon" src="img/suas-pastas.png" alt="pastas icon">
+					<p class="text-icon">
+						<a href="./suas-pastas.html">Suas pastas</a>
+					</p>
+				</div>
+			</div>
+			<div class="option">
+				<div class="icon-cntainer">
+					<img class="menu-icon" src="img/fav-folders.png"
+						alt="favorite pastas icon">
+					<p class="text-icon">
+						<a href="./pastas-prontas.html">Pastas prontas</a>
+					</p>
+				</div>
+			</div>
+			<div class="option">
+				<div class="icon-cntainer">
+					<img class="menu-icon" src="img/config-icon.png" alt="config icon">
+					<p class="text-icon">Ajustes</p>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<footer class="rodape">
+		<div class="propaganda-pra-ficar-rico"></div>
+	</footer>
+
+
+	<script>
+		function openMenu() {
+			document.body.querySelector('.side-menu').style.display = 'block';
+			setTimeout(()=>{
+				document.body.querySelector('.side-menu').style.width = '70vw';
+				document.body.querySelector('.side-menu').style.opacity = '1';
+			}, 20);
+		}
+
+		function closeMenu() {
+			document.body.querySelector('.side-menu').style.width = '0';
+			document.body.querySelector('.side-menu').style.opacity = '0';
+			setTimeout(()=>{
+				document.body.querySelector('.side-menu').style.display = 'none';
+			}, 400);
+		}
+	</script>
+</body>
+</html>

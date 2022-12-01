@@ -1,0 +1,126 @@
+@charset "ISO-8859-1";
+
+body:root { 
+	--fundo-principal: #4b4b4b; 
+	--fundo-complementar-1: #222222e0; 
+	--main-color: #C89DFF; 
+	--cor-complementar-1: #EBCBFA;
+}
+
+header {
+	background-color: var(--main-color);
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+body, html {
+	background-color: var(--fundo-principal);
+	overflow-x: hidden;
+}
+
+main {
+	padding-top: 15px;
+}
+
+.head-content {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
+
+.icon {
+	max-width: 100%;
+	max-height: 100%;
+	min-width: 100%;
+}
+
+.icon:hover {
+	cursor: pointer;
+}
+
+.icon-cntainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.menu-icon {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+}
+
+.text-icon {
+	font-size: 2rem;
+	text-align: center;
+	width: 100%;
+}
+
+.botao-icon {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	height: 100%;
+	width: 6rem;
+}
+
+.option {
+	width: 70%;
+	border-radius: 15px;
+	height: 280px;
+	background-color: var(--cor-complementar-1);
+	margin: 40px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.option:hover {
+	cursor: pointer;
+}
+
+.rodape {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.propaganda-pra-ficar-rico {
+	width: 60%;
+	margin: 0 auto;
+	height: 200px;
+	background: url('./img/ads/ifood_ad.jpg') no-repeat;
+	background-size: cover;
+}
+
+ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+li {
+	list-style: none;
+	text-align: center;
+	padding: 10px;
+	border: 1px solid #eee;
+	color: #eee;
+	width: 90%;
+	font-size: 2.5rem;
+}
+
+.side-menu {
+	background-color: var(--fundo-principal-1);
+	position: absolute;
+	width: 70vw;
+	height: 100%;
+	z-index: 10;
+	transition: .4s;
+}
+
+.head-side-menu {
+	padding: 40px;
+	padding-bottom: 60px;
+}
