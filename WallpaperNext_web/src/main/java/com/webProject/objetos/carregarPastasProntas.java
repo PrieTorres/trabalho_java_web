@@ -1,39 +1,41 @@
 package com.webProject.objetos;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 
+import br.com.WallpaperNext.model.pasta;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.pasta.dao.PastaDAO;
+
 // @WebServlet("WallpaperNext_web/pastas-prontas.html")
-@WebServlet("listar-pastas")
-public class carregarPastasProntas {
+@SuppressWarnings("serial")
+@WebServlet("/listar-pastas-prontas")
+public class carregarPastasProntas extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//pasta pasta_ = new pasta("pasta", "descricao");
-		//pasta[] lista = pasta_.getPastas();
+		PastaDAO pastaDAO = new PastaDAO();
 		
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		try {
-			Connection con = DatabaseConnection.initializeDatabase();
-			PreparedStatement st = con
-	                   .prepareStatement("select * from pasta");
-			//st.setInt(1, Integer.valueOf(request.getParameter("id")));
-			st.close();
-            con.close();
-            PrintWriter out = response.getWriter();
-            out.println("<html><body><b>Successfully Inserted"
-                        + "</b></body></html>");
+			
+			List<pasta> pastasProntas = pastaDAO.listarPastasProntas();
+			
+			request.setAttribute("pastas-prontas", pastasProntas);
+			RequestDispatcher rd = request.getRequestDispatcher("pastasProntas.jsp");
+			rd.forward(request, response);
+			
 		}
 		catch(Exception  e){
 			 e.printStackTrace();
 		}
+		
+		
 		
 	}
 
